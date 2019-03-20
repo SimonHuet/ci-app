@@ -13,8 +13,9 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   componentDidMount: () => {
     dispatch(fetchFacts())
-    fetchBackend('random')
-      .then(body => dispatch(factsFetched(body)))
+
+    fetchBackend('/random')
+      .then(body => dispatch(factsFetched([body])))
       .catch(() => dispatch(factFetchError()))
   },
   componentShouldUpdate: ()=>{ return mapStateToProps.facts.length>0 },

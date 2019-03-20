@@ -1,6 +1,7 @@
 import React from 'react';
 import { Header } from './header'
 import ListFacts from './list-facts'
+import "../main.css"
 
 export const App = () =>
   <div>

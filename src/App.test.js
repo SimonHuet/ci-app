@@ -1,1 +1,0 @@
-import '../test/redux/reducers/list-facts.test'

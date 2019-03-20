@@ -4,8 +4,7 @@ export const Fact = ({
   fact = {}
 }) =>
   <li className="list-group-item">
-    <h4>{ fact.value }</h4>
-    <div>
-      <span className="badge badge-primary badge-pill"><img alt='fact_icon' src={fact.icon_url} /></span>
-    </div>
+      <span style={{float:"left", marginRight :"25px"}} className="badge badge-pill">
+      <img alt='fact_icon' src={fact.icon_url} /></span>
+      <blockquote >{ fact.value }</blockquote>
   </li>

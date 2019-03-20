@@ -2,11 +2,21 @@ import React from 'react'
 import Fact from './fact'
 import Error from './error'
 
-export const ListFacts = ({
-  isFetchedFacts,
-  facts
-}) =>
-  <div>
+export class ListFacts extends React.Component{
+
+  renderFacts = (facts) =>{ 
+    return ( 
+    <ul className="list-group">
+     {facts.map((fact, index) =>
+      <Fact key={index} fact={fact} />
+     )}
+    </ul>)
+  }
+
+  render(){
+    const { isFetchedFacts , facts } = this.props
+    return (
+    <div>
     <h1 className="mt-5"> Chuck Norris Facts List</h1>
     <Error />
     {isFetchedFacts && 
@@ -15,17 +25,11 @@ export const ListFacts = ({
      </div>
     }
     {facts && console.log(facts)}
-    
-    {
-      facts.length ? renderFacts(facts)
+
+    {facts.length > 0 ? this.renderFacts(facts)
       : <div className="alert alert-warning">No facts :/</div>
     }
     <br />
-  </div>
-
-const renderFacts = (facts) =>
-  <ul className="list-group">
-    { facts.map((fact, index) =>
-      <Fact key={index} fact={fact} />
-    )}
-  </ul>
+  </div>)
+  }
+}
