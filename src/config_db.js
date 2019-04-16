@@ -1,9 +1,9 @@
 
 const config = {
-   user: 'chuck-norris-admin',
-   password: 'P@ssW0rd!',
-   server: 'chuck-norris-facts-srv.database.windows.net',
-   database: 'chuck-norris-facts-db',
+   user: 'User',
+   password: 'Password',
+   server: 'server',
+   database: 'database',
 
    options: {
        encrypt: true

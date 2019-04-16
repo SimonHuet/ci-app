@@ -49,10 +49,4 @@ describe('ChuckNorris app reducer', () => {
     assert.equal(state2.isFetchedFacts, false)
     assert.equal(state2.isFetchError, true)
   })
-
-  it('should get env variables',() =>{
-    const env = process.env.REACT_APP_NODE_ENV
-
-    assert.equal(env , 'developement')
-  })
 })
