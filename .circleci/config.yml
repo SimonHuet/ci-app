@@ -36,4 +36,4 @@ jobs:
       - run : npm run lint
 
       # run tests!
-      - run : npm test-ci --ci --detectOpenHandles --forceExit 
+      - run : npm run test-ci --ci --detectOpenHandles --forceExit 
