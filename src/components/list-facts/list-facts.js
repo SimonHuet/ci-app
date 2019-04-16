@@ -24,7 +24,6 @@ export class ListFacts extends React.Component{
       <span className="sr-only">Loading...</span>
      </div>
     }
-    {facts && console.log(facts)}
 
     {facts.length > 0 ? this.renderFacts(facts)
       : <div className="alert alert-warning">No facts :/</div>

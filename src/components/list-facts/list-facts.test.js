@@ -7,7 +7,7 @@ import {
 } from '../../../src/redux/actions/list-facts';
 
 describe('ChuckNorris app reducer', () => {
-  it('sould never fail and return the old state by default', () => {
+  it('should never fail and return the old state by default', () => {
     // a reducer called w/o args should return the INITIAL_STATE
     assert.equal(reducer(), INITIAL_STATE);
 
@@ -18,7 +18,7 @@ describe('ChuckNorris app reducer', () => {
     assert.equal(reducer(null, {type: 'pikachu'}), INITIAL_STATE);
   })
 
-  it('sould reduce FACTS_FETCHED action', () => {
+  it('should reduce FACTS_FETCHED action', () => {
     const state1 = reducer()
 
     assert.equal(state1.isFetchedFacts, false)
@@ -28,7 +28,7 @@ describe('ChuckNorris app reducer', () => {
     assert.equal(state2.isFetchedFacts, true)
   })
 
-  it('sould reduce FETCH_Facts action', () => {
+  it('should reduce FETCH_Facts action', () => {
     const state1 = reducer(null, factsFetched([
       { title: 'test fact 1'},
       { title: 'test fact 2'},
@@ -38,7 +38,7 @@ describe('ChuckNorris app reducer', () => {
     assert.equal(state1.isFetchedFacts, false)
   })
 
-  it('sould reduce FACT_FETCH_ERROR action', () => {
+  it('should reduce FACT_FETCH_ERROR action', () => {
     const state1 = reducer()
 
     assert.equal(state1.isFetchedFacts, false)
@@ -50,4 +50,9 @@ describe('ChuckNorris app reducer', () => {
     assert.equal(state2.isFetchError, true)
   })
 
+  it('should get env variables',() =>{
+    const env = process.env.REACT_APP_NODE_ENV
+
+    assert.equal(env , 'developement')
+  })
 })
