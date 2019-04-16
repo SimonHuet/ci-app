@@ -32,6 +32,8 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
+      # Code style linter
+      - run : npm lint
 
       # run tests!
-      - run: npm test  --ci --detectOpenHandles --forceExit 
+      - run : npm test --ci --detectOpenHandles --forceExit 
